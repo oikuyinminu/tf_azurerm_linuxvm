@@ -1,4 +1,4 @@
-resource "azurerm_windows_virtual_machine" "windows_vm" {
+resource "azurerm_linux_virtual_machine" "linux_vm" {
   count               = length(var.name)
   name                = var.name[count.index]
   location            = var.location

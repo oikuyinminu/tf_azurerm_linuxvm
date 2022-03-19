@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   admin_password = var.password
 
   provision_vm_agent        = true
-  patch_mode                = "Manual"
+  patch_mode                = "AutomaticByPlatform"
   # enable_automatic_updates = false
   # timezone                  = var.timezone
 

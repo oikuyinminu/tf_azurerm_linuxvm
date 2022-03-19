@@ -45,8 +45,8 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
 
   provision_vm_agent        = true
   patch_mode                = "Manual"
-  enable_automatic_updates = false
-  timezone                  = var.timezone
+  # enable_automatic_updates = false
+  # timezone                  = var.timezone
 
   license_type = var.hub_license_type != "" ? var.hub_license_type : null
 
@@ -58,7 +58,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "data_disks" {
   count = length(local.vm_data_disks)
 
   managed_disk_id    = local.vm_data_disks[count.index].id
-  virtual_machine_id = azurerm_windows_virtual_machine.windows_vm[local.vm_data_disks[count.index].vm_id].id
+  virtual_machine_id = azurerm_linux_virtual_machine.linux_vm[local.vm_data_disks[count.index].vm_id].id
   lun                = local.vm_data_disks[count.index].disk_lun
   caching            = local.vm_data_disks[count.index].disk_caching
 }

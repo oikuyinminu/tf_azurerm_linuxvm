@@ -92,6 +92,12 @@ variable "os_image" {
   }
 }
 
+variable "disable_password_authentication" {
+  description = "Specifies whether password authentication should be disabled. Defaults to false."
+  type = bool
+  default = false
+}
+
 variable "osdisk_create_option" {
   default = "FromImage"
 }

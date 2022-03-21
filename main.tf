@@ -43,6 +43,8 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   admin_username = "adminuser"
   admin_password = var.password
 
+  disable_password_authentication = var.disable_password_authentication
+
   provision_vm_agent        = true
   patch_mode                = "AutomaticByPlatform"
   # enable_automatic_updates = false

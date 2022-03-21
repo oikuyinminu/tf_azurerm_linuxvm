@@ -82,7 +82,7 @@ variable "os_disk_size" {
 
 variable "os_image" {
   description = "Details of the image to be used to provision on the VM"
-  type        = map(string)
+  type        = map(any)
   default = {
     publisher = "Canonical"
     offer     = "UbuntuServer"

@@ -88,6 +88,7 @@ variable "os_image" {
     offer     = "UbuntuServer"
     sku       = "18.04-LTS"
     version   = "latest"
+    plan      = false
   }
 }
 
